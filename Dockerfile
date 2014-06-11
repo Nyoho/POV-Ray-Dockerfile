@@ -3,7 +3,7 @@
 FROM ubuntu:12.04
 
 RUN \
-  apt-get update && apt-get -y install \
+  date && apt-get update && apt-get -y install \
   build-essential git zlib1g-dev libpng-dev libjpeg-dev libtiff-dev libboost-thread-dev autoconf
 
 RUN \
@@ -15,6 +15,7 @@ RUN \
   cd .. && \
   ./configure COMPILED_BY="your name <email@address>" && \
   make && \
-  make install
+  make install && \
+  date
 
 WORKDIR /src
